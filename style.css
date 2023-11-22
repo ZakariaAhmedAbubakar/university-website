@@ -1,0 +1,459 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+:root {
+    --ptxtcolor: #A78295;
+}
+body {
+    font-family: sans-serif;
+}
+.navbar {
+    height: 100vh;
+    background-image:   linear-gradient(rgba(0, 0, 0, 0.527),
+                        rgba(0, 0, 0, 0.9)),
+                        url('./img/banner.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
+.navbar header {
+    padding: 1em 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.navbar header .logo img{
+    width: 7rem;
+}
+.navbar header ul {
+    display: flex;
+    
+}
+.navbar header ul li{
+    margin-left: 1em;
+    color: #fff;
+    position:relative;
+}
+.navbar header ul li:hover::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    animation-name: underlineNavbar;
+    animation-duration: 2s;
+}
+@keyframes underlineNavbar {
+    0% {
+        border: 0px solid #F05941;
+        width: 0%;
+    }
+    100% {
+        border: 1px solid #F05941;
+        width: 100%;
+    }
+}
+.navbar header ul li a{
+    color: #fff;
+}
+@media (max-width: 800px){
+    .navbar header ul{
+        display: none;
+    }
+}
+.hero-section {
+    width: 65%;
+    margin: 0 auto;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.hero-section h1 {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: .5em;
+}
+.hero-section p{
+    color: #fff;
+    font-size: .8rem;
+    margin-bottom: 1em;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 10em;
+}
+.hero-section button{
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: .7rem;
+    margin-top: 1em;
+    text-align: center;
+    padding: 1em 1.5em;
+    background: #F05941;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+.hero-section button::before{
+    content:"";
+    width: 1rem;
+    height: 1px;
+    background: #F05941;
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    z-index: 1;
+}
+.hero-section button::after{
+    content:"";
+    width: 1rem;
+    height: 1px;
+    background: #F05941;
+    position: absolute;
+    top: 50%;
+    right: -16px;
+    z-index: 1;
+}
+.hero-section button:hover{
+    background: #A3B763;
+}
+@media (max-width: 1260px){
+    .hero-section {
+        width: 80%;
+    }
+    .hero-section h1 {
+        font-size: 3.5rem
+    }
+    .hero-section p{
+        font-size: .7rem;
+    }
+}
+@media (max-width: 940px){
+    .hero-section {
+        width: 90%;
+    }
+    .hero-section h1 {
+        font-size: 3rem
+    }
+    .hero-section p{
+        font-size: .7rem;
+    }
+}
+@media (max-width: 740px){
+    .hero-section {
+        width: 90%;
+    }
+    .hero-section h1 {
+        font-size: 2rem
+    }
+    .hero-section p{
+        font-size: .7rem;
+    }
+}
+
+/* course-section */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 6em;
+}
+.course-section .course-title {
+    text-align: center;
+}
+.course-section .course-title h2 {
+    margin-bottom: .3em;
+    font-size: 1.8rem;
+}
+.course-section .course-title p{
+    color: var(--ptxtcolor);
+    font-size: .7rem;
+}
+.course-section .courses {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 6em;
+    gap: 4em 1em;
+}
+.course-section .courses .course{
+    text-align: center;
+    padding: 1.5em 1em;
+    box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+    width: 31%;
+    min-width: 300px;
+}
+.course-section .courses .course:hover{
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),0px 0px 50px -100px rgba(0,0,0,0.1);
+}
+.course-section .courses .course h3{
+    margin-bottom: .6em;
+}
+.course-section .courses .course p {
+    color: var(--ptxtcolor);
+    font-size: .7rem;
+}
+
+/*  our college campus this section's css style shares the above one */
+.campus{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 6em;
+    gap: 4em 1em;
+}
+.campus-image {
+    width: 31%;
+    min-width: 300px;
+    position: relative;
+}
+.campus-image img{
+    width: 100%;
+    border-radius: .5em;
+}
+.London:hover::after{
+    content:"London";
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    bottom:0;
+    height: 100%;
+    left: 0;
+    background: #EEF296;
+    opacity: .5;
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: campus;
+    animation-duration: 1s;
+    overflow: hidden;
+}
+.newyork:hover::after{
+    content:"New York";
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    bottom:0;
+    height: 100%;
+    left: 0;
+    background: #EEF296;
+    opacity: .5;
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: campus;
+    animation-duration: 1s;
+    overflow: hidden;
+}
+.washington:hover::after{
+    content:"Washington";
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    bottom:0;
+    height: 100%;
+    left: 0;
+    background: #EEF296;
+    opacity: .5;
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: campus;
+    animation-duration: 1s;
+    overflow: hidden;
+}
+@keyframes campus{
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 100%;
+    }
+
+}
+
+
+/* our facility section this section's css style shares the above one */
+.facilities{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 6em;
+    gap: 4em 1em;
+}
+.facility {
+    width: 31%;
+    min-width: 300px;
+    position: relative;
+}
+.facility h3 {
+    padding: .4em 0;
+}
+.facility p {
+    color: var(--ptxtcolor);
+    font-size: .7rem;
+}
+.facility img{
+    width: 100%;
+    border-radius: .5em;
+}
+
+/* our testimonial section */
+.testimonial {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 6em;
+    gap: 4em 1em;
+}
+.user {
+    width: 48%;
+    min-width: 300px;
+    position: relative;
+    padding: 1em;
+    display: flex;
+    border-radius: .4em;
+    background: #ECF4D6;
+}
+.user-image {
+    width: 15%;
+}
+.user .user-desc{
+    margin-left: 1em;
+}
+.user .user-desc h3{
+    margin: .5em 0;
+    font-size: .8rem;
+}
+.user .user-desc p{
+    color: var(--ptxtcolor);
+    font-size: .7rem;
+}
+.user-image img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+
+/*  enroll section  */
+.enroll {
+    width: 100%
+}
+.enroll-image {
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),
+    rgba(0, 0, 0, 0.9)),url('./img/banner2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .4em;
+}
+.enroll-image .enroll-desc {
+    padding: 8em 0;
+    text-align: center;
+}
+.enroll-image .enroll-desc h3{
+    padding: .8em 13em;
+    font-size: 1.3rem;
+    color: #fff;
+    line-height: 1.4;
+}
+@media (max-width: 1000px){
+    .enroll-image .enroll-desc h3{
+        padding: .8em 10em;
+    }
+}
+@media (max-width: 900px){
+    .enroll-image .enroll-desc h3{
+        padding: .8em 8em;
+    }
+}
+@media (max-width: 800px){
+    .enroll-image .enroll-desc h3{
+        padding: .8em 6em;
+    }
+}
+@media (max-width: 600px){
+    .enroll-image .enroll-desc h3{
+        padding: .8em 2em;
+    }
+}
+.enroll-image .enroll-desc button{
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: .7rem;
+    margin-top: 1em;
+    text-align: center;
+    padding: 1em 1.5em;
+    background: #F05941;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+.enroll-image .enroll-desc button::before{
+    content:"";
+    width: 1rem;
+    height: 1px;
+    background: #F05941;
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    z-index: 1;
+}
+.enroll-image .enroll-desc button::after{
+    content:"";
+    width: 1rem;
+    height: 1px;
+    background: #F05941;
+    position: absolute;
+    top: 50%;
+    right: -16px;
+    z-index: 1;
+}
+.enroll-image .enroll-desc button:hover{
+    background: #A3B763;
+}
+
+/* footer section */
+footer {
+    text-align: center;
+    /* background:red; */
+}
+footer h3{
+    font-size: 1rem;
+}
+footer p {
+    padding: 2em 18em;
+    font-size: .6rem;
+    color: var(--ptxtcolor)
+}
+footer .social-icons{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1em;
+}
+footer .social-icons li{
+    margin: 0 .8em;
+}
+footer .social-icons li i{
+    color: #B31312;
+}
+
+
+
